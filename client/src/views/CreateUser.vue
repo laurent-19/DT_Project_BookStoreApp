@@ -14,11 +14,6 @@
                 <md-input v-model="username"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
-                <md-icon>email</md-icon>
-                <label>Email...</label>
-                <md-input v-model="email" type="email"></md-input>
-              </md-field>
-              <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
                 <label>Password...</label>
                 <md-input v-model="password"></md-input>
@@ -51,7 +46,6 @@ export default {
   data() {
     return {
       username: null,
-      email: null,
       password: null,
       isAdmin: null
     };
@@ -72,7 +66,7 @@ export default {
   methods: {
         register_user: function() {
             console.log('user register');
-            axios.put("http://localhost:3000/register", {username: this.username, password: this.password, email: this.email, isAdmin: this.isAdmin}).then(
+            axios.put("http://localhost:3000/register", {username: this.username, password: this.password, isAdmin: this.isAdmin}).then(
                 response => (this.register_status = response.data) 
             );
             

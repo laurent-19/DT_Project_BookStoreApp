@@ -7,20 +7,25 @@
             class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
             <login-card header-color="red">
-                <h4 slot="title" class="card-title">Add Order</h4>
+                <h4 slot="title" class="card-title">Add Team</h4>
                 <md-field class="md-form-group" slot="inputs">
                 <md-icon>face</md-icon>
-                <label>User...</label>
-                <md-input v-model="userId"></md-input>
+                <label>Id...</label>
+                <md-input type="number" v-model="id"></md-input>
               </md-field>
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>book</md-icon>
-                <label>Book...</label>
-                <md-input v-model="bookId"></md-input>
+                <label>Name...</label>
+                <md-input v-model="name"></md-input>
+              </md-field>
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>book</md-icon>
+                <label> Style...</label>
+                <md-input v-model="style"></md-input>
               </md-field>
               <div slot="footer">
-                <md-button @click="register_order" class="md-simple md-success md-lg">
-                  Save Order
+                <md-button @click="register_team" class="md-simple md-success md-lg">
+                  Save Team
                 </md-button>
               </div>
             </login-card>
@@ -44,8 +49,9 @@ export default {
   bodyClass: "register-page",
   data() {
     return {
-      userId: null,
-      bookId: null
+      id: null,
+      name: null,
+      style: null,
     };
   },
   props: {
@@ -62,15 +68,13 @@ export default {
     }
   },
   methods: {
-        register_order: function() {
-          if(this.password === this.passwordCheck){
-            console.log('order register');
-            axios.put("http://localhost:3000/createOrder", {userId: this.userId, bookId: this.bookId}).then(
+        register_team: function() {
+            console.log('team register');
+            axios.put("http://localhost:3000/createTeam", {id: this.id, name: this.name, style: this.style}).then(
                 response => (this.register_status = response.data) 
             );
             
             console.log(this.register_status)
-          }
     }
   }
 };

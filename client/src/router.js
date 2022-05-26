@@ -6,8 +6,8 @@ import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import AdminIndex from "./views/AdminIndex.vue";
 import CreateUser from "./views/CreateUser.vue";
-import CreateBook from "./views/CreateBook.vue";
-import CreateOrder from "./views/CreateOrder.vue";
+import CreatePlayer from "./views/CreatePlayer.vue";
+import CreateTeam from "./views/CreateTeam.vue";
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
@@ -67,17 +67,17 @@ export default new Router({
       }
     },
     {
-      path: "/createBook",
-      name: "createBook",
-      components: { default: CreateBook },
+      path: "/createPlayer",
+      name: "createPlayer",
+      components: { default: CreatePlayer },
       props: {
         //header: { colorOnScroll: 400 }
       }
     },
     {
-      path: "/createOrder",
-      name: "createOrder",
-      components: { default: CreateOrder },
+      path: "/createTeam",
+      name: "createTeam",
+      components: { default: CreateTeam },
       props: {
         //header: { colorOnScroll: 400 }
       }
