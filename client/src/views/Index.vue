@@ -327,8 +327,7 @@ export default {
   },
   data() {
     return {
-      firstname: null,
-      email: null,
+      username: null,
       password: null,
       leafShow: false
     };

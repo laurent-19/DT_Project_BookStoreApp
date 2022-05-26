@@ -1,7 +1,7 @@
 const mongo = require('./mongo')
 const userSchema = require('./schemas/user-schema')
-const bookSchema = require('./schemas/player-schema')
-const orderSchema = require('./schemas/team-schema')
+const playerSchema = require('./schemas/player-schema')
+const teamSchema = require('./schemas/team-schema')
 
 var api = require('./api.js').app;
 
