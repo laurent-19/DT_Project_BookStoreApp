@@ -25,20 +25,19 @@
         </md-list-item>
       </md-list>
 
-      <transition name="fade" mode="out-in">
+      <!--<transition name="fade" mode="out-in">
         <div class="tab-content">
           <div
             :class="getTabContent(index + 1)"
             v-for="(item, index) in tabName"
             :key="item"
-            v-if="isActivePanel(tabName[index])"
-          >
+            >v-if="isActivePanel(tabName[index])"
             <slot :name="getTabContent(index + 1)">
               This is the default text!
             </slot>
           </div>
         </div>
-      </transition>
+      </transition>-->
     </md-card-content>
   </md-card>
 </template>

@@ -7,7 +7,7 @@
             class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto"
           >
             <login-card header-color="green">
-              <h4 slot="title" class="card-title">Login</h4>
+              <h4 slot="title" class="card-title">Register</h4>
               <!--<md-button
                 slot="buttons"
                 href="javascript:void(0)"
@@ -40,12 +40,17 @@
                 <label>Password...</label>
                 <md-input v-model="password"></md-input>
               </md-field>
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>lock</md-icon>
+                <label>Password Check...</label>
+                <md-input v-model="passwordCheck"></md-input>
+              </md-field>
               <div slot="footer">
-              <center><md-button @click="login_user" slot="footer" class="md-simple md-success md-lg">
-                Login
-              </md-button></center>
-                  <p>Don't have an account? <a href="#/register">Register</a></p>
-                  </div>
+                <md-button @click="register_user" class="md-simple md-success md-lg">
+                  Register
+                </md-button>
+                <p>Have an account? <a href="#/">Login</a></p>
+              </div>
             </login-card>
           </div>
         </div>
@@ -64,11 +69,12 @@ export default {
   components: {
     LoginCard
   },
-  bodyClass: "login-page",
+  bodyClass: "register-page",
   data() {
     return {
       username: null,
-      password: null
+      password: null,
+      passwordCheck: null
     };
   },
   props: {
@@ -85,18 +91,20 @@ export default {
     }
   },
   methods: {
-    login: function() {
+    register: function() {
       console.log(this.username)
       axios.put("http://localhost:3000/message",{user: this.username})
     },
-        login_user: function() {
-            console.log('user login');
+        register_user: function() {
+          if(this.password === this.passwordCheck){
+            console.log('user register');
             console.log(this.username)
-            axios.put("http://localhost:3000/login", {username: this.username, password: this.password}).then(
-                response => (this.login_status = response.data) 
+            axios.put("http://localhost:3000/register", {username: this.username, password: this.password, isAdmin: false}).then(
+                response => (this.register_status = response.data) 
             );
-
-            console.log(this.login_status)
+            
+            console.log(this.register_status)
+          }
     }
   }
 };

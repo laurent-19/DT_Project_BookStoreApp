@@ -3,6 +3,11 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
+import Register from "./views/Register.vue";
+import AdminIndex from "./views/AdminIndex.vue";
+import CreateUser from "./views/CreateUser.vue";
+import CreatePlayer from "./views/CreatePlayer.vue";
+import CreateTeam from "./views/CreateTeam.vue";
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
@@ -12,7 +17,7 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: "/",
+      path: "/index",
       name: "index",
       components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
@@ -30,11 +35,51 @@ export default new Router({
       }
     },
     {
-      path: "/login",
+      path: "/",
       name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
+      components: { default: Login },
       props: {
-        header: { colorOnScroll: 400 }
+        //header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/register",
+      name: "register",
+      components: { default: Register },
+      props: {
+        //header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/adminIndex",
+      name: "adminIndex",
+      components: { default: AdminIndex },
+      props: {
+        //header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/createUser",
+      name: "createUser",
+      components: { default: CreateUser },
+      props: {
+        //header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/createPlayer",
+      name: "createPlayer",
+      components: { default: CreatePlayer },
+      props: {
+        //header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/createTeam",
+      name: "createTeam",
+      components: { default: CreateTeam },
+      props: {
+        //header: { colorOnScroll: 400 }
       }
     },
     {
