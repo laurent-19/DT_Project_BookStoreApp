@@ -1,0 +1,19 @@
+The project will probably require a "npm install" on both client and server
+The database can be found in mongodb compass by connecting to url: mongodb+srv://admin:admin1234@mongodb.mouwb.mongodb.net/DTdb?retryWrites=true&w=majority
+//you can also connect from browser
+The app then runs simply by clicking on the run.bat file
+The important files in client are:
+-main.js
+-router.js
+-Login.vue
+-Register.vue
+-AdminLogin.vue
+-CreateUser.vue
+-CreateTeam.vue
+-CreatePlayer.vue
+The important files in server are:
+-mongo.js
+-run.js
+-user-schema.js
+-team-schema.js
+-player-schema.js
